@@ -11,7 +11,7 @@
 class FromHex {
 
     constructor (hexCode) {
-        this.code = hexCode
+        this.code = hexCode.replace(/#/g, "")
         this.type = this.code.length
     }
 
@@ -67,6 +67,7 @@ class FromHex {
 
 
 hex = new FromHex("A45000")
+
 
 if(hex.checkIsValid()){
     console.table(hex.convertToRgb())
