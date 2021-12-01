@@ -1,7 +1,5 @@
-
 /**
- * This function expect a clean output 
- * Either 3 or 6 chars length
+ * Expect 3 or 6 digits hex code 
  * 
  * 
  * Authored by Anass Boutaline
