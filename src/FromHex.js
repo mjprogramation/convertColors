@@ -20,7 +20,7 @@ class FromHex {
     /**
      * Check current hex code is valide 
      * 
-     * @returns Boolean
+     * @returns {Boolean}
      */
     checkIsValid () {
 
@@ -33,13 +33,22 @@ class FromHex {
     }
 
 
+    /**
+     * Force 3 hex code digits to 6
+     * 
+     * @returns {Void}
+     */
     forceSixDigits () {
         this.code = this.code.split('').map(function (hex) {
                         return hex + hex;
                     }).join('');
     }
 
-
+    /**
+     * Convert To RGB
+     * 
+     * @returns {this.returnRGBobject()}
+     */
     convertToRgb () {
 
         if(this.type === 3) {
@@ -52,6 +61,12 @@ class FromHex {
     }
 
 
+    /**
+     * Return RGB object
+     * 
+     * @param {Array} hexObject 
+     * @returns {Object}
+     */
     returnRgbObject (hexObject) {
         return {
             red : parseInt(hexObject[0], 16),
@@ -63,12 +78,4 @@ class FromHex {
 
 
 
-}
-
-
-hex = new FromHex("A45000")
-
-
-if(hex.checkIsValid()){
-    console.table(hex.convertToRgb())
 }
