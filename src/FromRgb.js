@@ -15,6 +15,8 @@ class FromRgb {
         this.blue = parseInt(blue)
     }
 
+
+
     /**
      * Check given value in interval between 0 & 255
      * 
@@ -25,19 +27,50 @@ class FromRgb {
         return (value > MIN && value < MAX)
     }
 
+
+    /**
+     * Check if all colors values are between 0 and 255
+     * 
+     * 
+     * @returns { Boolean } 
+     */
     checkIsValide () {
         return this.inInterval(this.red) && this.inInterval(this.blue) && this.inInterval(this.green)
     }
 
+
+    /**
+     * Convert Single Value to Hex
+     * 
+     * @param { Integer } value 
+     * @returns { String }
+     */
     singleToHex (value) {
         const hex = value.toString(16)
         return (hex.length === 1 ? "0" + hex : hex).toString()
     }
 
+
+    /**
+     * Convert All Values To Hex String
+     * 
+     * @returns { String } 
+     */
     convertToHex () {
         return (this.singleToHex(this.red) + this.singleToHex(this.green) + this.singleToHex(this.blue)).toUpperCase()
     }
 
+
+    /**
+     * 
+     * Return Min and Max values as { Object } from given values
+     * 
+     * @param { integer } value1 
+     * @param { integer } value2 
+     * @param { integer } value3 
+     * 
+     * @returns { Object }
+     */
     getMaxMinValue (value1, value2, value3) {
 
         return {
@@ -46,7 +79,15 @@ class FromRgb {
         }
     }
 
-
+    /**
+     * Calculate Hue for HSL
+     * 
+     * @param { integer } max 
+     * @param { integer } delta 
+     * @param { Object } thirdParam 
+     * 
+     * @returns { integer }
+     */
     calculateHue (max, delta, {red, blue, green}) {
         if(delta == 0){
             return 0
@@ -64,11 +105,19 @@ class FromRgb {
 
     }
 
+
+    /**
+     * Convert Current RGB object to HSL
+     * 
+     * @returns {
+     *  h, s, l
+     * } 
+     */
     convertToHsl () {
+        
         let h = 0,
             s = 0,
             l = 0
-
 
         const red   = this.red/255,
               green = this.green/255,
