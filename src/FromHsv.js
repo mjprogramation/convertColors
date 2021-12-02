@@ -1,5 +1,5 @@
 /**
- * Rgb class to manipulate and convert RGB inputs
+ * Hsv class to manipulate and convert hsv inputs
  * 
  * 
  * Authored by Anass Boutaline
@@ -79,4 +79,6 @@ class FromHsv {
 
 
 }
+
+module.exports = FromHsv
 
