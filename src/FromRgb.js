@@ -4,6 +4,8 @@
  * 
  * Authored by Anass Boutaline
  */
+
+
 const MIN = -1,
       MAX = 256
 
