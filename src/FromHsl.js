@@ -33,7 +33,7 @@ class FromHsl {
      * @returns { Boolean }
      */
     isValidePercentage (value) {
-        return this.hsvInstance.isValidePercentage(value)
+        return FromHsv.isValidePercentage(value)
     } 
 
 
@@ -91,4 +91,4 @@ class FromHsl {
 
 let hsl = new FromHsl(360, 11, 14)
 
-console.log(hsl.convertRgb())
+console.log(hsl.isValidePercentage(150))

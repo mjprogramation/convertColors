@@ -32,7 +32,7 @@ class FromHsv {
      * @param { Int } value 
      * @returns { Boolean }
      */
-    isValidePercentage (value) {
+    static isValidePercentage (value) {
         return value > -1 && value < 101
     }
 
